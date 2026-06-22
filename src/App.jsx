@@ -130,7 +130,7 @@ export default function App() {
               </span>
               <span className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Available for ambitious work</span>
             </div>
-            <h1 className="animate-fade-up font-display text-[clamp(4rem,11vw,9.5rem)] font-extrabold leading-[0.78] tracking-[-0.075em] [animation-delay:80ms]">
+            <h1 className="animate-fade-up font-display text-[clamp(4rem,11vw,9.5rem)] font-extrabold leading-[0.86] tracking-[-0.075em] [animation-delay:80ms]">
               Ralph<br />Ouano<span className="text-primary">.</span>
             </h1>
             <div className="mt-10 grid animate-fade-up gap-8 [animation-delay:160ms] md:grid-cols-[1fr_1.25fr] md:items-end">
@@ -148,28 +148,60 @@ export default function App() {
             </div>
           </div>
 
-          <div className="relative mt-16 animate-fade-up [animation-delay:320ms] lg:mt-0">
+          <div className="relative mt-16 w-full max-w-[420px] justify-self-center animate-fade-up [animation-delay:320ms] lg:mt-0 lg:max-w-none">
             <div className="absolute -inset-16 -z-10 rounded-full bg-primary/10 blur-3xl" />
             <Card className="relative overflow-hidden p-6 shadow-[0_24px_80px_-36px_rgba(0,0,0,.5)]">
-              <div className="mb-14 flex items-start justify-between">
-                <Badge className="border-primary/40 bg-primary/10 text-primary">Profile / 2026</Badge>
+              <div className="mb-8 flex items-start justify-between">
+                <div>
+                  <Badge className="border-primary/40 bg-primary/10 text-primary">Profile summary</Badge>
+                  <p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                    Full-stack · Cloud · AI
+                  </p>
+                </div>
                 <span className="font-mono text-[10px] text-muted-foreground">CEB · PH</span>
               </div>
-              <div className="mb-6 aspect-[4/3] rounded-2xl bg-foreground p-5 text-background">
-                <div className="flex h-full flex-col justify-between">
-                  <div className="flex justify-between font-mono text-[10px] uppercase tracking-widest opacity-60">
-                    <span>Systems</span><span>AI</span><span>Cloud</span>
+
+              <div className="rounded-2xl bg-primary p-6 text-primary-foreground">
+                <div className="flex min-h-[190px] flex-col justify-between">
+                  <div className="flex items-center justify-between">
                   </div>
-                  <div>
-                    <div className="mb-4 h-1 w-16 bg-primary" />
-                    <div className="font-display text-4xl font-bold leading-none tracking-tight">Ideas,<br />engineered.</div>
+                  <p className="max-w-[34ch] text-[15px] font-medium leading-6">
+                    Full-stack engineer building cloud-native applications, intelligent automation, and dependable production systems across healthcare and business environments.
+                  </p>
+                  <div className="flex items-center gap-3 border-t border-primary-foreground/25 pt-4">
+                    <Code2 size={17} />
+                    <p className="text-xs leading-5 opacity-80">
+                      Uses <strong className="font-semibold text-primary-foreground">Claude Code</strong> to accelerate implementation, debugging, and testing—with human review and validation.
+                    </p>
                   </div>
                 </div>
               </div>
-              <p className="text-sm leading-6 text-muted-foreground">
-                React · Next.js · Python · Rust · AWS<br />
-                Building useful things with sharp edges.
-              </p>
+
+              <div className="mt-6 grid grid-cols-3 divide-x divide-border border-y border-border py-4 text-center">
+                {[
+                  ["01", "Full-stack"],
+                  ["02", "Cloud-native"],
+                  ["03", "AI-assisted"],
+                ].map(([number, label]) => (
+                  <div className="px-2" key={label}>
+                    <div className="font-mono text-[10px] text-primary">{number}</div>
+                    <div className="mt-1 text-[11px] text-muted-foreground">{label}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {["Claude Code", "React", "Next.js", "Python", "Rust", "AWS"].map((tech) => (
+                  <Badge
+                    className={tech === "Claude Code"
+                      ? "border-primary/40 bg-primary/10 normal-case tracking-normal text-primary"
+                      : "border-border bg-muted/60 normal-case tracking-normal"}
+                    key={tech}
+                  >
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
             </Card>
           </div>
         </section>
