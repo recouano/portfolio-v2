@@ -153,25 +153,28 @@ export default function App() {
             <Card className="relative overflow-hidden p-6 shadow-[0_24px_80px_-36px_rgba(0,0,0,.5)]">
               <div className="mb-8 flex items-start justify-between">
                 <div>
-                  <Badge className="border-primary/40 bg-primary/10 text-primary">Profile summary</Badge>
+                  <Badge className="border-primary/40 bg-primary/10 text-primary">Engineering approach</Badge>
                   <p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                    Full-stack · Cloud · AI
+                    Build · Review · Validate
                   </p>
                 </div>
                 <span className="font-mono text-[10px] text-muted-foreground">CEB · PH</span>
               </div>
 
               <div className="rounded-2xl bg-primary p-6 text-primary-foreground">
-                <div className="flex min-h-[190px] flex-col justify-between">
-                  <div className="flex items-center justify-between">
+                <div className="flex min-h-[190px] flex-col justify-between gap-8">
+                  <div>
+                    <p className="font-mono text-[10px] uppercase tracking-[0.18em] opacity-65">
+                      AI-assisted delivery
+                    </p>
+                    <p className="mt-3 max-w-[18ch] font-display text-2xl font-bold leading-tight tracking-tight">
+                      Fast execution. Human judgment.
+                    </p>
                   </div>
-                  <p className="max-w-[34ch] text-[15px] font-medium leading-6">
-                    Full-stack engineer building cloud-native applications, intelligent automation, and dependable production systems across healthcare and business environments.
-                  </p>
-                  <div className="flex items-center gap-3 border-t border-primary-foreground/25 pt-4">
-                    <Code2 size={17} />
+                  <div className="flex items-start gap-3 border-t border-primary-foreground/25 pt-4">
+                    <Code2 className="mt-0.5 shrink-0" size={17} />
                     <p className="text-xs leading-5 opacity-80">
-                      Uses <strong className="font-semibold text-primary-foreground">Claude Code</strong> to accelerate implementation, debugging, and testing—with human review and validation.
+                      Claude Code accelerates implementation, debugging, and testing. Review, observability, and validation keep the work dependable.
                     </p>
                   </div>
                 </div>
@@ -179,9 +182,9 @@ export default function App() {
 
               <div className="mt-6 grid grid-cols-3 divide-x divide-border border-y border-border py-4 text-center">
                 {[
-                  ["01", "Full-stack"],
-                  ["02", "Cloud-native"],
-                  ["03", "AI-assisted"],
+                  ["01", "Build"],
+                  ["02", "Observe"],
+                  ["03", "Improve"],
                 ].map(([number, label]) => (
                   <div className="px-2" key={label}>
                     <div className="font-mono text-[10px] text-primary">{number}</div>
